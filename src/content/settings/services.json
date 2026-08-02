@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "number": "01",
+      "title": "Documentary Filming",
+      "description": "Long-form and observational filming across Afghanistan, from access planning through to a finished cut, paced to the story rather than a deadline."
+    },
+    {
+      "number": "02",
+      "title": "Photography",
+      "description": "Editorial and documentary photography for print, digital, and campaign use, shot with attention to context, light, and consent."
+    },
+    {
+      "number": "03",
+      "title": "Short-form & Social Video",
+      "description": "Concise, story-led video built for campaigns and digital channels, without sacrificing the documentary integrity of the material."
+    },
+    {
+      "number": "04",
+      "title": "Illustration & Graphic Design",
+      "description": "Custom illustration and visual design for reports, campaigns, and communications that call for a considered, editorial hand."
+    },
+    {
+      "number": "05",
+      "title": "Post-production",
+      "description": "Editing, color, sound, and delivery handled to the standards expected by international broadcasters and publications."
+    },
+    {
+      "number": "06",
+      "title": "Production Support",
+      "description": "Local logistics, fixing, translation, and access planning for visiting teams working on the ground in Afghanistan."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "src/content/projects"
+    create: true
+    delete: true
+    identifier_field: title
+    summary: "{{title}} — {{location}}, {{year}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Documentary", "Photography", "Short-form Video", "Design", "Mixed"]
+      - { label: "Location", name: "location", widget: "string", hint: "e.g. Kabul, Northern Afghanistan, Nationwide, Location withheld" }
+      - { label: "Year", name: "year", widget: "number", value_type: "int" }
+      - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - { label: "Short intro video (optional)", name: "videoUrl", widget: "string", required: false, hint: "Paste a Vimeo or YouTube link, e.g. https://vimeo.com/123456789" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "Shown on the project card and the work list" }
+      - { label: "Full description", name: "description", widget: "text", required: false, hint: "Shown on the project's own page. If left blank, the summary is used instead." }
+      - { label: "Ethics note", name: "ethicsNote", widget: "string", required: false, hint: "e.g. Client identity and sensitive details have been withheld." }
+      - { label: "Featured on homepage", name: "featured", widget: "boolean", default: true }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "General"
+        file: "src/content/settings/site.json"
+        fields:
+          - { label: "Homepage hero image", name: "heroImage", widget: "image" }
+          - { label: "Logo image (optional — leave empty to keep the default text mark)", name: "logoImage", widget: "image", required: false }
+          - { label: "Contact email", name: "email", widget: "string" }
+          - { label: "WhatsApp link", name: "whatsappUrl", widget: "string", required: false, hint: "Full link, e.g. https://wa.me/15551234567" }
+          - { label: "Showreel video (optional)", name: "showreelVideoUrl", widget: "string", required: false, hint: "Paste a Vimeo or YouTube link, e.g. https://vimeo.com/123456789" }
+          - { label: "Showreel poster image (optional)", name: "showreelPoster", widget: "image", required: false, hint: "Still shown before the video is played" }
+      - name: "services"
+        label: "Services"
+        file: "src/content/settings/services.json"
+        fields:
+          - name: "items"
+            label: "Service"
+            label_singular: "Service"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
